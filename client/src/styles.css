@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-html{
-    background-color: black
-}
 *{
     color:green;
     font-family: 'Press Start 2P', cursive;
+}
+html{
+    background-color: black
 }
 div{
     padding:10px;
@@ -44,16 +44,8 @@ img{
 h2{
     vertical-align: center;
 }
-#goldCounter{
-    font-size: 2.5em;
-    color:gold;
-}
-.border{
-    border:solid green 3px;
-}
-.red{
-    color:red
-}
+
+/* grid layout */
 .container{
     display: grid;
     grid-template-columns: 1fr;
@@ -80,6 +72,30 @@ h2{
     grid-column-gap: 1em;
     align-items: center
 }
+
+/* other styling */
+#goldCounter{
+    font-size: 2.5em;
+    color:gold;
+}
+.border{
+    border:solid green 3px;
+}
+.errorField{
+    border: 2px solid red;
+    color:red;
+    padding:1em;
+    text-align: center;
+}
+.warningField{
+    color:yellow;
+    padding:1em;
+    text-align: center;
+}
+.red{
+    color:red
+}
+
 .counter{
     display: inline-block;
 }

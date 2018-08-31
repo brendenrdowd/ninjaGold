@@ -4,9 +4,10 @@
     <p id="goldCounter" class="counter">{{gold}}</p>
   </div>
   <div>
-    <h2>Ninja Gold</h2>
-    <button class="btn" *ngIf="!user" [routerLink]="['login']">Load a Game</button>
-    <button class="btn" *ngIf="!user" (click)="save()">Save Game</button>
+    <h2 *ngIf="!user" [routerLink]="['']">Ninja Gold</h2>
+    <h2 *ngIf="user" [routerLink]="['']">{{user.username}}</h2>
+    <button class="btn" *ngIf="!user" [routerLink]="['/login']">Load a Game</button>
+    <button class="btn" *ngIf="!user" [routerLink]="['/login']">Save Game</button>
     <button class="btn" *ngIf="user" (click)="save()">Save Game</button>
     <a *ngIf="user" href="/logout"><button class="btn">Logout</button></a>
   </div>

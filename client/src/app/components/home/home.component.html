@@ -1,5 +1,6 @@
 <div class="container">
   <app-header></app-header>
+  <div *ngIf="errorMessage.length > 0" class="warningField">{{errorMessage}}</div>
   <div class="nested4">
     <app-farm></app-farm>
     <app-cave></app-cave>

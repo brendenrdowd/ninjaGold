@@ -1,0 +1,25 @@
+.border{
+    margin-top: 1%;
+}
+input[type=text],input[type=password]{
+    display:inline-block;
+    box-shadow:none;
+    border:none;
+    caret-color: green
+}
+input:hover{
+    color:green
+}
+input[type=submit]:hover{
+    color:white;
+    border: white solid 2px;
+    box-shadow: 2px 2px 20px 3px white inset;
+}
+form{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-column-gap: 1em;
+    text-align:center;
+    margin:auto;
+}
+

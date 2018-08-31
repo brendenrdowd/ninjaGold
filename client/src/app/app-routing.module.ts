@@ -8,12 +8,11 @@ const routes: Routes = [
     path:"",
     pathMatch:"full",
     component: HomeComponent
-    // component:LoginregComponent
   },
   {
-    path:"home",
+    path:"login",
     pathMatch:"full",
-    component: HomeComponent
+    component:LoginregComponent
   }
 ];
 

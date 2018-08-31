@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InterlinkService } from '../../interlink.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +11,18 @@ export class HeaderComponent implements OnInit {
   gold:number
   time:string
   user:object
-  constructor(private _interlink: InterlinkService) { 
+  constructor(private _interlink: InterlinkService, private _router: Router) { 
     this.gold = this._interlink.gold;
-    console.log("header-component:",this.gold,"& service:",this._interlink.gold)
+  }
+
+  save(){
+    if(this.user){
+      this._interlink.save(()=>{
+        this.user = this._interlink.user;
+      });
+    }else{
+      this._router.navigate(['login'])
+    }
   }
 
   ngOnInit() {
@@ -20,8 +30,9 @@ export class HeaderComponent implements OnInit {
       this.gold = gold;
     });
 
-    this._interlink.authenticate(()=>{
-      this.user = this._interlink.user;
+    this._interlink.currentUser.subscribe((user)=>{
+      this.user = user;
     })
+    
   }
 }

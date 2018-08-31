@@ -12,13 +12,11 @@ export class ActivitiesComponent implements OnInit {
   constructor(private _interlink: InterlinkService) {
     this.activityArr = this._interlink.activityArr;
     this.time = this._interlink.time;
-    console.log("activity log")
   }
   
   ngOnInit() {
     this.activityArr = this._interlink.activityArr;
     this.time = this._interlink.time;
-    console.log("activity log")
   }
 
 }

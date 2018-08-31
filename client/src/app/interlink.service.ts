@@ -11,16 +11,22 @@ export class InterlinkService {
   activityArr: string[] = []
   time: string
   user: object
+  currentUser: BehaviorSubject<object> = new BehaviorSubject({})
+  errorMessage:string = ""
+  error:BehaviorSubject<string> = new BehaviorSubject("")
   constructor(private _http: Http) {
     this.gold = 0
     this.time = Date().toString();
     this.user = {
       username: "",
-      _id: ""
+      _id: "",
+      gold: this.gold
     }
   }
 
   processMoney(str, cb) {
+    this.errorMessage = ""
+    this.error.next(this.errorMessage)
     let gold = null;
     if (str == "House") {
       gold = this.random(2, 5)
@@ -62,21 +68,36 @@ export class InterlinkService {
     }
   }
 
-  save() {
-    this._http.get('/save').subscribe((res) => {
-
+  login(user, cb) {
+    this._http.post('/login', user).subscribe((res) => {
+      if(res.json() == "No Game Found, creating new profile"){
+        this.errorMessage = res.json();
+        this.error.next(this.errorMessage)
+        cb()
+      }else{
+        this.user = res.json();
+        // this.user = this.user['user']
+        this.gold = this.user['gold']
+        this.currentGold.next(this.gold)
+        this.currentUser.next(this.user)
+        cb()
+      }
     })
   }
 
-  login() {
-    this._http.get('/load').subscribe((res) => {
-
+  save(cb) {
+    this.user['gold'] = this.gold;
+    this._http.post('/save', this.user).subscribe((res) => {
     })
   }
 
   authenticate(cb) {
     this._http.get('/authenticate').subscribe((res) => {
-      this.user = res;
+      this.user = res.json();
+      if(res.json()){
+        this.user = this.user['user']
+      }
+      this.currentUser.next(this.user)
       cb();
     })
   }
