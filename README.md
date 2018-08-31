@@ -4,6 +4,8 @@ Ninja Gold is a very simple RPG game built using MEAN where users can choose whe
 
 The master branch is a stable but simplistic version of the application, really only using Angular, not express and mongo. 
 
+![alt text](/client/src/assets/demo.jpg "Logo Title Text 1")
+
 ## In Development - unstable
 In the development branch I am working on adding a user log in/registration so users can pick up where they left off. I'm also modularizing the html instead of being a single component application, taking advantage of the component structure to redistribute the load. 
 
