@@ -23,6 +23,21 @@ input:hover{
     border: gold solid 2px;
     box-shadow: 2px 2px 20px 3px gold inset;
 }
+button{
+    background-color:black;
+    border:none;
+    font-size: 20px;
+    vertical-align: 50%;
+    border:solid 2px green;
+    padding:1em;
+    cursor: pointer;
+    margin:0.5em;
+}
+button:hover{
+    color:white;
+    border: white solid 2px;
+    box-shadow: 2px 2px 20px 3px white inset;
+}
 img{
     height:4em;
 }
@@ -53,10 +68,10 @@ h2{
     grid-template-columns: repeat(4,1fr);
     grid-column-gap: 1em;
 }
-.nested4 > div{
+.nest{
     padding-bottom:1.5em;
 }
-.nested4 > div > p{
+.nest > p{
     margin:2em 0;
 }
 .nested2{
@@ -99,7 +114,7 @@ h2{
 }
 .lds-ripple div {
     position: absolute;
-    border: 4px solid #fff;
+    border: 4px solid green;
     opacity: 1;
     border-radius: 50%;
     animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;

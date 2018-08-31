@@ -1,56 +1,10 @@
 <div class="container">
-
-  <div class="row border nested2">
-    <div>
-      <img src="/assets/coin.gif" alt="your gold:" class="counter">
-      <p id="goldCounter" class="counter">{{gold}}</p>
-    </div>
-    <div>
-      <h2>Ninja Gold</h2>
-    </div>
+  <app-header></app-header>
+  <div class="nested4">
+    <app-farm></app-farm>
+    <app-cave></app-cave>
+    <app-house></app-house>
+    <app-casino></app-casino>
   </div>
-
-  <div class="row">
-    <div class="nested4">
-      <div class="border">
-        <h3>Farm</h3>
-        <p>Earns 10-20 gold</p>
-        <form (submit)="processMoney('Farm')">
-          <input type="submit" value="Find Gold!">
-        </form>
-      </div>
-      <div class="border">
-        <h3>Cave</h3>
-        <p>Earns 5-10 gold</p>
-        <form (submit)="processMoney('Cave')">
-          <input type="submit" value="Find Gold!">
-        </form>
-      </div>
-      <div class="border">
-        <h3>House</h3>
-        <p>Earns 2-5 gold</p>
-        <form (submit)="processMoney('House')">
-          <input type="submit" value="Find Gold!">
-        </form>
-      </div>
-      <div class="border">
-        <h3>Casino</h3>
-        <p>Earn/Lose 0-50 gold</p>
-        <form (submit)="processMoney('Casino')">
-          <input type="submit" value="Find Gold!">
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <p class="activities">Activities:</p>
-    <div class="border activities" id="activityLog">
-      <div *ngFor="let update of activityArr">
-        <p *ngIf="update[4] == 'f'">{{update}} at {{time | date:'medium'}}</p>
-        <p *ngIf="update[4] == 'l';else elseBlock"><span class="red">{{update}} on {{time | date:'medium'}}</span></p>
-      </div>
-    </div>
-  </div>
-
-</div> <!--end container-->
+  <app-activities></app-activities>
+</div>

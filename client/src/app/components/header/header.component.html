@@ -1,0 +1,13 @@
+<div class="nested2 border">
+  <div>
+    <img src="/assets/coin.gif" alt="your gold:" class="counter">
+    <p id="goldCounter" class="counter">{{gold}}</p>
+  </div>
+  <div>
+    <h2>Ninja Gold</h2>
+    <button class="btn" *ngIf="!user" [routerLink]="['login']">Load a Game</button>
+    <button class="btn" *ngIf="!user" (click)="save()">Save Game</button>
+    <button class="btn" *ngIf="user" (click)="save()">Save Game</button>
+    <a *ngIf="user" href="/logout"><button class="btn">Logout</button></a>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<p class="activities">Activities:</p>
+<div class="border activities" id="activityLog">
+  <div *ngFor="let update of activityArr">
+    <p *ngIf="update[4] == 'f'">{{update}} on {{time | date:'medium'}}</p>
+    <p *ngIf="update[4] == 'l';else elseBlock"><span class="red">{{update}} on {{time | date:'medium'}}</span></p>
+  </div>
+</div>
