@@ -8,10 +8,10 @@ import { InterlinkService } from '../../interlink.service'
 })
 export class CasinoComponent implements OnInit {
 
-  constructor(private _intelrink: InterlinkService) { }
+  constructor(private _interlink: InterlinkService) { }
 
   processMoney(str){
-    this._intelrink.processMoney(str);
+    this._interlink.processMoney(str,()=>{});
   }
 
   ngOnInit() {

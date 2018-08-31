@@ -3,13 +3,6 @@ const Gold = require('../controllers/GoldController.js'),
 
 module.exports = function (app) {
 
-    app.post('/login',(req,res)=>{
-        Gold.login(req.res);
-    })
-    app.post('/register',(req,res)=>{
-        Gold.register(req.res);
-    })
-
     app.get('/save',(req,res)=>{
         Gold.save(req.res);
     })
