@@ -9,7 +9,7 @@ import { InterlinkService } from '../../interlink.service'
 export class HeaderComponent implements OnInit {
   gold:number
   time:string
-  user:object = {}
+  user:object
   constructor(private _interlink: InterlinkService) { 
     this.gold = this._interlink.gold;
     console.log("header-component:",this.gold,"& service:",this._interlink.gold)

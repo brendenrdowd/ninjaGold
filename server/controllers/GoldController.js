@@ -40,10 +40,12 @@ module.exports = {
     },
 
     authenticate: function (req,res){
-        if(req.session.user == null){
-            return res.json(null)
-        } else {
-            return res.json(req.session.user)
+        if(req.session){
+            if(req.session.user == null){
+                return res.json(null)
+            } else {
+                return res.json(req.session.user)
+            }
         }
     },
 }
