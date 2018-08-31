@@ -6,6 +6,8 @@ In the development branch I am working on adding a user log in/registration so u
 
 ## In Development 
 
-bug - saving over an already exists game loads the previous saved game
+bug - saving over an already existing game loads the previous saved game
+
+bug - still sees user object when no user is logged in on login page, rare.
 
 I am also planning to spice up the activity log a little bit to make it a little more interesting using random anecdotes. 
